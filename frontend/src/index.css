@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+body {
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', 'Inter', sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+@theme {
+  --color-agri-50: #eff6ff;
+  --color-agri-100: #dbeafe;
+  --color-agri-200: #bfdbfe;
+  --color-agri-300: #93c5fd;
+  --color-agri-400: #60a5fa;
+  --color-agri-500: #3b82f6;
+  --color-agri-600: #2563eb;
+  --color-agri-700: #1d4ed8;
+  --color-agri-800: #1e40af;
+  --color-agri-900: #1e3a8a;
+  --color-agri-950: #172554;
+}
+
+/* Glass & Card styles */
+.agri-card {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.05);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.agri-card:hover {
+  box-shadow: 0 6px 16px -2px rgba(37, 99, 235, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+}
+
+.agri-card-highlight {
+  background: linear-gradient(to bottom right, rgba(239, 246, 255, 0.8), #ffffff, #ffffff);
+  border-radius: 1rem;
+  border: 1px solid #bfdbfe;
+  box-shadow: 0 1px 3px 0 rgba(37, 99, 235, 0.08);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* High contrast guarantees */
+.text-high-contrast {
+  color: #0f172a !important;
+}
+
+.text-muted-contrast {
+  color: #334155 !important;
+}
+
+/* NexAgri button & form styling matching reference design */
+.btn-primary-nexagri {
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.25);
+}
+.btn-primary-nexagri:hover {
+  background-color: #1d4ed8;
+  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+}
+
+.input-nexagri {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #0f172a;
+  transition: all 0.2s ease;
+}
+.input-nexagri:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+/* Pulse animation for live indicators */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.2); }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+/* Voice Assistant Sound Waves & Glowing Ring Animations */
+@keyframes voice-wave {
+  0%, 100% { height: 6px; }
+  50% { height: 28px; }
+}
+
+@keyframes voice-pulse-ring {
+  0% {
+    transform: scale(0.96);
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
+  }
+  70% {
+    transform: scale(1.06);
+    box-shadow: 0 0 0 20px rgba(37, 99, 235, 0);
+  }
+  100% {
+    transform: scale(0.96);
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+  }
+}
+
+@keyframes voice-listening-ring {
+  0% {
+    transform: scale(0.96);
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.85);
+  }
+  70% {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 24px rgba(239, 68, 68, 0);
+  }
+  100% {
+    transform: scale(0.96);
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}
+
+.animate-voice-pulse {
+  animation: voice-pulse-ring 2s infinite ease-in-out;
+}
+
+.animate-listening-pulse {
+  animation: voice-listening-ring 1.4s infinite ease-in-out;
+}
+
+.wave-bar {
+  animation: voice-wave 1.2s ease-in-out infinite;
+}
+
+
